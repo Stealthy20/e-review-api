@@ -3,7 +3,6 @@ from reviews.models import Review
 from keep.models import Keep
 
 
-
 class ReviewSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -32,7 +31,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         if user.is_authenticated:
             keep = Keep.objects.filter(
-                owner=user, keep=obj
+                owner=user, review=obj
             ).first()
             return keep.id if keep else None
         return None
