@@ -5,7 +5,7 @@ from reviews.models import Review
 
 class Comment(models.Model):
     """
-    Comment model, related to User and Post
+    Comment model, related to User and Review
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
