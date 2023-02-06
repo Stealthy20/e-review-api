@@ -21,6 +21,7 @@ class ReviewList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
+        'category',
     ]
 
     def perform_create(self, serializer):

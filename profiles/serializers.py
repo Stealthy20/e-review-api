@@ -1,10 +1,12 @@
 from rest_framework import serializers
 from .models import Profile
+from keep.models import Keep
 
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
+    reviews_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -15,5 +17,5 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'name', 'image',
-            'is_owner'
+            'is_owner', 'reviews_count',
         ]

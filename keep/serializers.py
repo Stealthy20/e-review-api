@@ -1,9 +1,9 @@
 from django.db import IntegrityError
 from rest_framework import serializers
-from save.models import Save
+from keep.models import Keep
 
 
-class SaveSerializer(serializers.ModelSerializer):
+class KeepSerializer(serializers.ModelSerializer):
     """
     Serializer for the Save model
     The create method handles the unique constraint on 'owner' and 'post'
@@ -11,7 +11,7 @@ class SaveSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = Save
+        model = Keep
         fields = ['id', 'created_at', 'owner', 'review']
 
     def create(self, validated_data):

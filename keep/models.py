@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from reviews.models import Review
 
 
-class Save(models.Model):
+class Keep(models.Model):
     """
     save model, related to 'owner' and 'review'.
     'owner' is a User instance and 'post' is a Post instance.
@@ -11,7 +11,7 @@ class Save(models.Model):
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     review = models.ForeignKey(
-        Review, related_name='save', on_delete=models.CASCADE
+        Review, related_name='keep', on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(auto_now_add=True)
 

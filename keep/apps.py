@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SaveConfig(AppConfig):
+class KeepConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'save'
+    name = 'keep'
