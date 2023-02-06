@@ -35,7 +35,7 @@ class Review(models.Model):
         )
     )
     image = models.ImageField(
-        upload_to='images/', default='../https://res.cloudinary.com/dz6tnfhbp/image/upload/v1675674247/istockphoto-1225193385-612x612_tdfjpj.jpg', blank=True
+        upload_to='images/', default='../default_category', blank=True
     )
 
     class Meta:
