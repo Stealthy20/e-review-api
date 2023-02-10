@@ -14,26 +14,9 @@ class Review(models.Model):
     content = models.TextField(blank=True)
     category = models.CharField(
         max_length=50,
-        blank=False,
-        choices=(
-            ("tv", "TV"),
-            ("mobile phone", "Mobile Phone"),
-            ("tablet", "Tablet"),
-            ("tv accessories", "TV Accessories"),
-            ("mobile phone accessories", "Mobile Phone Accessories"),
-            ("tablet accessories", "Tablet Accessories")
-        )
-    )
+        blank=False)
     rating = models.PositiveSmallIntegerField(
-        blank=False,
-        choices=(
-            (1, "1"),
-            (2, "2"),
-            (3, "3"),
-            (4, "4"),
-            (5, "5"),
-        )
-    )
+        blank=False)
     image = models.ImageField(
         upload_to='images/', default='../default_category', blank=True
     )
