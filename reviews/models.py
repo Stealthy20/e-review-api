@@ -15,7 +15,8 @@ class Review(models.Model):
     category = models.CharField(
         max_length=50,
         blank=False)
-    rating = models.PositiveSmallIntegerField(
+    rating = models.CharField(
+        max_length=1,
         blank=False)
     image = models.ImageField(
         upload_to='images/', default='../default_category', blank=True
