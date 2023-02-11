@@ -20,6 +20,7 @@ class ReviewList(generics.ListCreateAPIView):
  
     search_fields = [
         'owner__username',
+        'keep__owner__username',
         'title',
         'category',
     ]
