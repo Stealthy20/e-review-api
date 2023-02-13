@@ -16,13 +16,24 @@ class ReviewList(generics.ListCreateAPIView):
     filter_backends = [
         filters.SearchFilter,
         DjangoFilterBackend,
+        filters.OrderingFilter,
     ]
- 
+
+    filterset_fields = [
+        'keep__owner__profile',
+        'owner__profile',
+        'category'
+    ]
+
     search_fields = [
         'owner__username',
-        'keep__owner__username',
         'title',
         'category',
+        'rating',
+    ]
+
+    ordering_fields = [
+        'keep__created_at',
     ]
 
     def perform_create(self, serializer):
