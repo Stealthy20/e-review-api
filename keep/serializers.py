@@ -6,7 +6,7 @@ from keep.models import Keep
 class KeepSerializer(serializers.ModelSerializer):
     """
     Serializer for the Save model
-    The create method handles the unique constraint on 'owner' and 'post'
+    The create method handles the unique constraint on 'owner' and 'review'
     """
     owner = serializers.ReadOnlyField(source='owner.username')
 

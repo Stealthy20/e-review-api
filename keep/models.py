@@ -5,8 +5,8 @@ from reviews.models import Review
 
 class Keep(models.Model):
     """
-    save model, related to 'owner' and 'review'.
-    'owner' is a User instance and 'post' is a Post instance.
+    Save model, related to 'owner' and 'review'.
+    'owner' is a User instance and 'review' is a Review instance.
     'unique_together' makes sure a user can't like the same post twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
