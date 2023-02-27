@@ -47,5 +47,3 @@ class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ReviewSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Review.objects.all()
-
-    

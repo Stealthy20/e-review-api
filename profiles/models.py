@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 
 class Profile(models.Model):
     """
-    Profile model related to "owner". 
+    Profile model related to "owner".
     """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

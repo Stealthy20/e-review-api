@@ -34,5 +34,5 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class CommentDetailSerializer(CommentSerializer):
-  
+
     review = serializers.ReadOnlyField(source='review.id')
